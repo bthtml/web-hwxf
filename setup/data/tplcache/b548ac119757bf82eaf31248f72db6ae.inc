@@ -1,0 +1,1 @@
+<li><a href="[field:arcurl/]"><font class="pull-right">[field:pubdate function="GetDateTimeMK(@me)"/]</font><span class="glyphicon glyphicon-play"> </span>[field:title/]</a></li>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/public/css/bootstrap.min.css" rel="stylesheet">
+<link href="/public/css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="/public/js/html5shiv.min.js"></script>
+      <script src="/public/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--top-->
+{dede:include filename="head.htm"/}
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+{dede:field.content/}
+  </div>
+
+</div>
+
+
+<div class="container-fluid border-bt bg-f6">
+<div class="container border-l border-r bg-ff crumbs">
+位置：{dede:field name='position'/}
+</div>
+</div>
+<div class="container-fluid  bg-f6 margin-bt-50">
+<div class="container border-l  border-r border-bt pandding-20">
+
+
+<ul class="list-unstyled student-list">
+{dede:arclist pagesize='100' flag='p' imgwidth='314' imgheight='208' titlelen='54'}
+<li>
+[field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}'><img src='{@me['litpic']}' class='img-responsive'/></a>");[/field:array]
+<h5>[field:title/]</h5>
+<p>[field:description/]...</p>
+</li>
+{/dede:arclist}
+</ul>
+
+
+</div>
+</div>
+
+
+<!--foot-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>

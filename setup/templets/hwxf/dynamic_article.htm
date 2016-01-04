@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/public/css/bootstrap.min.css" rel="stylesheet">
+<link href="/public/css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="/public/js/html5shiv.min.js"></script>
+      <script src="/public/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--top-->
+{dede:include filename="head.htm"/}
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+{dede:field.content/}
+  </div>
+
+</div>
+
+
+<div class="container-fluid border-bt bg-f6">
+<div class="container border-l border-r bg-ff crumbs">
+<div class=" crumbs">位置：{dede:field name='position'/}</div>
+<p class="tab-flow"><a href="/org/train/">培训报名流程</a><a href="/org/train/dynamic"  class="active">培训开班动态</a></p>
+</div>
+</div>
+<div class="container-fluid  bg-f6 margin-bt-50">
+<div class="container border-l  border-r border-bt bg-ff pandding-20 tab-row">
+
+{dede:list pagesize='10'}
+<div class="media">
+<div class="media-left"><div class="wp-time">[field:pubdate function="GetDateMk(@me)"/]</div></div>
+<div class="media-body">
+<a href="[field:arcurl/]">
+<h4>[field:title/]</h4>
+<p>[field:description/]...<font class="pull-right">[详细阅读]</font></p>
+</a>
+</div>
+</div>
+{/dede:list}
+</div>
+</div>
+
+
+<!--foot-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>

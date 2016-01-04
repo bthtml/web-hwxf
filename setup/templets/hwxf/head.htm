@@ -1,0 +1,25 @@
+
+
+<nav class="navbar  navbar-default top-bor">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#"><img src="/public/img/logo-small.png" alt=""/></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse pull-right-left">
+          <ul class="nav navbar-nav">
+         <li><a href='{dede:global.cfg_cmsurl/}/'><span>首页</span></a></li>
+      	{dede:channel type='top' row='10' currentstyle="<li class='active'><a href='~typelink~' ~rel~>~typename~</a></li>"}
+      	<li><a href='[field:typeurl/]' [field:rel/]>[field:typename/]</a></li>
+      	{/dede:channel}
+         </ul>
+        </div>
+      </div>
+    </nav>
+
+

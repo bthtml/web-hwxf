@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/public/css/bootstrap.min.css" rel="stylesheet">
+<link href="/public/css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="/public/js/html5shiv.min.js"></script>
+      <script src="/public/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--top-->
+{dede:include filename="head.htm"/}
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+{dede:sql sql='Select content from dede_arctype where id=~typeid~'} 
+[field:content/] 
+{/dede:sql}
+  </div>
+
+</div>
+
+
+
+
+<div class="container-fluid border-bt bg-f6">
+<div class="container border-l border-r bg-ff">
+<div class=" crumbs">位置：{dede:field name='position'/}</div>
+</div>
+<div class="container-fluid  bg-f6 margin-bt-50">
+<div class="container border-l  border-r border-bt bg-ff pandding-20">
+<h3 class="text-center">{dede:field.title/}</h3>
+<p class="text-center">{dede:field.pubdate function="MyDate('Y-m-d H:i',@me)"/}　　总阅览：<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script></p>
+<hr>
+<div class="content">
+{dede:field.body/}
+</div>
+</div>
+</div>
+
+
+<!--foot-->
+
+{dede:include filename="footer.htm"/}
+
+</body>
+</html>

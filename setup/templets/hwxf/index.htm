@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/public/css/bootstrap.min.css" rel="stylesheet">
+<link href="/public/css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="/public/js/html5shiv.min.js"></script>
+      <script src="/public/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--top-->
+{dede:include filename="head.htm"/}
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    {dede:myad name='index'/}
+  </div>
+
+</div>
+
+<div class="container">
+<p class="text-center div-padding img-xs"><img src="/public/img/index-new.png"  alt=""/></p>
+
+<div class="row">
+{dede:arclist row='4' typeid='1' imgwidth=263 imgheight=155 titlelen='50'}
+<div class="col-md-3 col-xs-12 row-img">
+<a href="[field:arcurl/]">
+[field:image/]
+<h4>[field:title/]</h4>
+<p>[field:info /]...</p>
+</a>
+</div>
+{/dede:arclist}
+
+</div>
+<p class="text-center padding-top-16"><a class="btn btn-default" href="/org/enrollment/" role="button"><span class="glyphicon glyphicon-th-list"></span> 更多招生动态</a><p>
+</div>
+
+<div class="container-fluid index-college-bg">
+<div class="container">
+<h4 class="bg-danger padding-h4 hidden-lg">掌握校园消息，圆您心中梦想</h4>
+{dede:arclist row='4' typeid='3'  titlelen='26'}
+<div class="col-md-5 col-xs-12 list-bgimg-0[field:global name=autoindex/]">
+<a href="[field:arcurl/]"><h4>[field:title/]...</h4>
+<p>[field:info /]...</p></a>
+</div>
+{/dede:arclist}
+</div>
+<p class="text-center padding-top-16"><a class="btn btn-default" href="/org/school/" role="button"><span class="glyphicon glyphicon-th-list"></span> 更多院校信息</a><p>
+</div>
+
+<div class="container">
+
+<p class=" text-center div-padding img-xs"><img src="/public/img/index_pxdt.png" alt=""/></p>
+
+<div class="row">
+{dede:arclist row='4' typeid='6' titlelen='40'}
+<div class="col-md-4 col-xs-12 index-future">
+<a href="[field:arcurl/]"><h4>[field:title/]</h4></a>
+<p>[field:info /]...</p>
+</div>
+{/dede:arclist}
+</div>
+<p class="text-center padding-top-16"><a class="btn btn-default" href="/org/train/" role="button"><span class="glyphicon glyphicon-th-list"></span> 更多培训动态</a><p>
+</div>
+<!--foot-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>

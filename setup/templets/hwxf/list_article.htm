@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/public/css/bootstrap.min.css" rel="stylesheet">
+<link href="/public/css/style.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="/public/js/html5shiv.min.js"></script>
+      <script src="/public/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--top-->
+{dede:include filename="head.htm"/}
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+{dede:field.content/}
+  </div>
+</div>
+
+
+
+<div class="container-fluid border-bt bg-f6">
+<div class="container border-l border-r bg-ff crumbs">
+位置：{dede:field name='position'/}
+</div>
+</div>
+<div class="container-fluid  bg-f6 margin-bt-50">
+<div class="container border-l  border-r border-bt bg-ff pandding-20">
+
+{dede:arclist pagesize='1' flag='p' imgwidth='290' imgheight='140' }
+<div class="media padding-top-20">
+  <div class="media-left">
+    [field:array runphp='yes']@me = (empty(@me['litpic']) ? "" : "<a href='{@me['arcurl']}'><img src='{@me['litpic']}'/></a>"); [/field:array]
+  </div>
+  <div class="media-body">
+  <h4>[field:title/]</h4>
+<p>[field:description/]...</p>
+<p class="pull-right"><a href="[field:arcurl/]">[阅读详细]</a></p>
+  </div>
+</div>
+{/dede:arclist}
+
+<ul class="list-unstyled li-list">
+{dede:list pagesize='10'}
+<li><a href="[field:arcurl/]"><font class="pull-right">[field:pubdate function="GetDateTimeMK(@me)"/]</font><span class="glyphicon glyphicon-play"> </span>[field:title/]</a></li>
+{/dede:list}
+</ul>
+
+<nav>
+  <ul class="pagination pull-right">
+{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+  </ul>
+</nav>
+
+</div>
+</div>
+
+
+<!--foot-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>
