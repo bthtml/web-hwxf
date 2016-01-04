@@ -49,6 +49,7 @@ body,html{ font: normal 14px/40px "Microsoft YaHei","微软雅黑"; line-height:
 .crumbs{ color:#999; font-size:16px; padding-top:30px; padding-bottom:30px;}
 .crumbs a{ color:#d73929}
 
+
 @media screen and (max-width : 900px){
 	.navbar{ min-height: inherit; margin-bottom:auto;}
 	.navbar-brand{ height:auto;}
@@ -79,6 +80,15 @@ body,html{ font: normal 14px/40px "Microsoft YaHei","微软雅黑"; line-height:
 
 .student-list li{ float:left; margin-left:14px; margin-right:10px; margin-bottom:20px; width:30%; background:#fff; border:1px solid #ccc; border-radius:3px; padding:8px;}
 .student-list li h5{ padding-bottom:10px; border-bottom:1px solid #ccc; font-weight:bold;}
+
+.wp-time{ width:50px; margin-top:10px; color:#999; font-size:14px;}
+.wp-time p{ font-size:20px;}
+.media-body a{ text-decoration:none;}
+.media-body a h4{ color:#666; font-weight:600;}
+.media-body a p font{ color:#d73929}
+.tab-flow a{ padding-top:8px; padding-bottom:8px; padding-left:20px; padding-right:20px; margin-right:6px; background:#ECECEC; color:#999; text-decoration:none;}
+.tab-flow .active{ color:#FFF; background:#d73929;}
+.tab-row .row{ margin-top:10px;}
 @media screen and (max-width : 900px){
 	.media-left{ display:block;}
 	.media-body{display:block;}
@@ -89,4 +99,6 @@ body,html{ font: normal 14px/40px "Microsoft YaHei","微软雅黑"; line-height:
 	.margin-bt-50{ margin-bottom:10px;}
 	.student-list li{ width:100%; margin:0px; margin-bottom:20px;}
 	.student-list li img{ width:100%; max-height:202px;}
+	.wp-time{ display:none;}
+	.tab-row .row .text-right{ text-align:left;}
 }  
